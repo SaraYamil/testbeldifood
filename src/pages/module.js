@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
 import { createClient } from "@supabase/supabase-js";
-import { useHistory } from "react-router-dom";
 
 const supabase = createClient(
   process.env.SUPABASE_URL,
@@ -24,10 +23,6 @@ export default function module() {
         .insert([dataa])
         .select();
       console.log(data);
-      if (!error) {
-        // If there is no error, redirect to "/menu"
-        history.push("/menu");
-      }
     } catch (error) {
       console.log(error);
     }
